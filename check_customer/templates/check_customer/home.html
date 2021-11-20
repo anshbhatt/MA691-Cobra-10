@@ -1,0 +1,250 @@
+{%extends 'base.html'%}
+{%block content%}
+	<div class="row">
+	<div class="col-2">
+	</div>
+	<div class="col-8">
+		<form method="POST" action="/credit_score">
+			{% csrf_token %}
+			<div class="card text-center">
+				<div class="card-body">
+				<h4 class="card-title">Personal Information</h4>
+					<div class="row mb-2">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="title">Title</label>
+								<select class="form-control" name="title">
+									<option value="">(Select One)</option>
+									<option value="Mr.">Mr</option>
+									<option value="Miss">Miss</option>
+									<option value="Mrs.">Mrs</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-8">
+							<div class="form-group">
+								<label for="name">Name</label>
+								<input type="text" class="form-control" name="name">
+							</div>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="age">Age</label>
+								<input type="number" class="form-control" name="age">
+							</div>
+						</div>
+						<div class="col-md-8">
+							<div class="form-group">
+								<label for="gender">Gender</label>
+								<div class="row">
+									<div class="col-md-6 pr-md-0"><label class="radio-inline form-control"><input value="Male" type="radio" name="gender"> Male</label></div>
+									<div class="col-md-6"><label class="radio-inline form-control"><input value="Female" type="radio" name="gender"> Female</label></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div class="col-md-6 pr-md-0">
+							<div class="form-group">
+								<label for="housing">Housing</label>
+								<select class="form-control" name="housing">
+									<option value="">(Select One)</option>
+									<option value="A152">Own House</option>
+									<option value="A151">On Rent</option>
+									<option value="A153">Free/Govt</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="residence_since">Present residence since (years)</label>
+								<input type="number" class="form-control" name="residence_since">
+							</div>
+						</div>
+					</div>
+					<div class="form-group mb-4">
+						<label for="marital-status">Marital Status</label>
+						<div class="row">
+							<div class="col-md-3 pr-md-0"><label class="radio-inline form-control"><input value="single" type="radio" name="marital-status"> Single</label></div>
+							<div class="col-md-3 pr-md-0"><label class="radio-inline form-control"><input value="married" type="radio" name="marital-status"> Married</label></div>
+							<div class="col-md-3 pr-md-0"><label class="radio-inline form-control"><input value="divorced" type="radio" name="marital-status"> Divorced</label></div>
+							<div class="col-md-3"><label class="radio-inline form-control"><input value="widowed" type="radio" name="marital-status"> Widowed</label></div>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div class="form-group col-md-6">
+							<label for="telephone">Have a telephone?</label>
+							<div class="row">
+								<div class="col-md-6 pr-md-0"><label class="radio-inline form-control"><input value="A192" type="radio" name="telephone"> Yes</label></div>
+								<div class="col-md-6 pr-md-0"><label class="radio-inline form-control"><input value="A191" type="radio" name="telephone"> No</label></div>
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="foreign">Are a foreign worker?</label>
+							<div class="row">
+								<div class="col-md-6 pr-md-0"><label class="radio-inline form-control"><input value="A201" type="radio" name="foreign"> Yes</label></div>
+								<div class="col-md-6"><label class="radio-inline form-control"><input value="A202" type="radio" name="foreign"> No</label></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card text-center mt-4 mb-4">
+				<div class="card-body">
+				<h4 class="card-title">Financial Information</h4>
+					<div class="row mb-2">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="employment-status">Employment Status</label>
+								<select class="form-control" name="employment-status">
+									<option value="">(Select One)</option>
+									<option value="A71">Unemployed</option>
+									<option value="A72">Working for less than 1 year</option>
+									<option value="A73">Working for less than 4 years</option>
+									<option value="A74">Working for less than 7 years</option>
+									<option value="A75">Working for more than 7 years</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="employment-type">Employment Type</label>
+								<select class="form-control" name="employment-type">
+									<option value="">(Select One)</option>
+									<option value="A171">Unemployed</option>
+									<option value="A172">Unskilled Resident</option>
+									<option value="A173">Skilled Employee</option>
+									<option value="A174">Highly Skilled Employee</option>
+									<option value="A174">Self Employed</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="checking_account">Amount in Checking Account</label>
+								<input type="number" name="checking_account" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="savings_account">Amount in Savings Account</label>
+								<input type="number" name="savings_account" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="form-group mb-4">
+						<label for="property_type">Property/Investment Type</label>
+						<div class="row">
+							<div class="col-md-3 pr-md-0"><label class="form-control inline"><input value="A121" type="radio" name="property_type"> Real Estate</label></div>
+							<div class="col-md-3 pr-md-0"><label class="form-control inline"><input value="A122" type="radio" name="property_type"> Life Insurance</label></div>
+							<div class="col-md-3 pr-md-0"><label class="form-control inline"><input value="A123" type="radio" name="property_type"> Car/Other</label></div>
+							<div class="col-md-3"><label class="form-control inline"><input value="A124" type="radio" name="property_type"> None</label></div>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div class="col-md-4 pr-md-0">
+							<div class="form-group">
+								<label for="installment_plans">Other installment plans</label>
+								<select name="installment_plans" class="form-control">
+									<option value="">(Select One)</option>
+									<option value="A141">Bank</option>
+									<option value="A142">Stores</option>
+									<option value="A143">None</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-4 pr-md-0">
+							<div class="form-group">
+								<label for="existing_credits">Number of existing credits here</label>
+								<input type="number" name="existing_credits" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="credit_history">Credit History</label>
+								<select name="credit_history" class="form-control">
+									<option value="">(Select One)</option>
+									<option value="A30">No credits taken</option>
+									<option value="A31">All credits at this bank paid back duly</option>
+									<option value="A32">Existing credits paid back duly till now</option>
+									<option value="A33">Delay in paying in the past</option>
+									<option value="A34">Critical Account/Other credits existing (not at this bank)</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div class="col-md-4 pr-md-0">
+							<div class="form-group">
+								<label for="credit_amount">Credit Amount</label>
+								<input type="number" name="credit_amount" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-4 pr-md-0">
+							<div class="form-group">
+								<label for="duration">Duration (in months)</label>
+								<input type="number" name="duration" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="installment_rate">Installment Rate</label>
+								<input type="number" name="installment_rate" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="purpose">Purpose</label>
+								<select class="form-control" name="purpose">
+									<option value="">(Select One)</option>
+									<option value="A40">Car (New)</option>
+									<option value="A41">Car (Used)</option>
+									<option value="A42">Furniture/Equipment</option>
+									<option value="A43">Radio/Television</option>
+									<option value="A44">Domestic Appliances</option>
+									<option value="A45">Repairs</option>
+									<option value="A46">Education</option>
+									<option value="A47">Vacation</option>
+									<option value="A48">Retraining</option>
+									<option value="A49">Business</option>
+									<option value="A410">Other</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="debtor">Other Debtors/Guarantors</label>
+								<select class="form-control" name="debtor">
+									<option value="">(Select One)</option>
+									<option value="A101">None</option>
+									<option value="A102">Co-Applicant</option>
+									<option value="A103">Guarantor</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group mt-2">
+						<div class="row">
+							<div class="col-md-8">
+								<label for="maintainence">Number of people liable to be provided maintainence for: </label>
+							</div>
+							<div class="col-md-4">
+								<input class="form-control" type="number" name="maintainence">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+	</div>
+	<div class="col-2">
+	</div>
+{%endblock%}
