@@ -1,5 +1,6 @@
 <img src="https://socialify.git.ci/anshbhatt/MA691-Cobra-10/image?language=1&name=1&owner=1&stargazers=1&theme=Dark">
 # MA691-Cobra-10
+</br>
 Project group for course MA691, IIT Guwahati </br>
 
 DISCLAIMER </br>
