@@ -56,6 +56,7 @@ def credit_score(request):
         
         checking_dm = int(customer.checking_account)/42.84
         savings_dm = int(customer.savings_account)/42.84
+        customer.credit_amount = round(float(customer.credit_amount)/42.84, 3)
         if(checking_dm==0):
             checking_account_category = 'A11'
         elif(checking_dm<=200):
@@ -80,7 +81,7 @@ def credit_score(request):
                 'Duration':[int(customer.duration)],
                 'Credit History':[customer.credit_history],
                 'Purpose':[customer.purpose],
-                'Credit Amount':[int(customer.credit_amount)],
+                'Credit Amount':[customer.credit_amount],
                 'Savings Account':[savings_account_category],
                 'Employment Length':[customer.employment_status],
                 'Installment Rate':[int(customer.installment_rate)],
