@@ -18,4 +18,4 @@ MA691_Deployed_Model: The code in the complete model was further edited to suit 
 </br>
 MA691_Report: In our report for the whole project we describe the procedure comprehensively, mentioning the inferences and decisions at each stage.
 </br></br>
-The model was further deployed using pythonanywhere. The same can be accessed at: <a href="https://cobra10.pythonanywhere.com/" target="_blank">Cobra 10 Customer Classification</a>
+The model was further deployed using pythonanywhere. In the present version of the deployed model, kindly fill in all the form fields for it to function properly. It can be accessed at: <a href="https://cobra10.pythonanywhere.com/" target="_blank">Cobra 10 Customer Classification</a>
